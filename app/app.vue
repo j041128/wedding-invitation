@@ -300,7 +300,7 @@ const scrollToNearbyInvitation = () => {
           </div>
           <div class="profile py-[39px]">
             <div class="mx-15">
-              <FadeIn class="h-[255px] w-full">
+              <FadeIn class="h-[255px] w-full my-4">
                 <div class="grid grid-cols-2">
                   <div class="flex justify-center">
                     <NuxtImg loading="lazy" width="175px" height="175px" :src="state.texts.url_groom" />
@@ -316,7 +316,7 @@ const scrollToNearbyInvitation = () => {
                   <p class="text-center text-[16px] font-mincho">{{ state.texts.profile_groom_comment }}</p>
                 </div>
               </FadeIn>
-              <FadeIn class="h-[255px] w-full">
+              <FadeIn class="h-[255px] w-full my-4">
                 <div class="grid grid-cols-2">
                   <div class="flex items-center justify-center">
                     <div>

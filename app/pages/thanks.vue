@@ -51,9 +51,12 @@ const scrollToNearbyThanks = () => {
   var rect = thanks.value.getBoundingClientRect();
   var position = rect.top;
 
-  smartphone.value.scrollBy({
-    top: position,
-  });
+  if (typeof(smartphone.value) == Object && position !== null){
+    smartphone.value.scrollBy({
+        top: position,
+    });
+  }
+
 }
 
 onMounted(() => {
