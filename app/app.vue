@@ -110,7 +110,7 @@ const scrollToNearbyInvitation = () => {
                         <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
                       </div>
                       <div class="grid grid-cols-5 pb-2" v-if="config.public.INFORMATION_NOTE">
-                        <dt class="col-span-5">{{ config.public.INFORMATION_NOTE }}</dt>
+                        <dt class="col-span-5 ml-10">{{ config.public.INFORMATION_NOTE }}</dt>
                       </div>
                       <div class="grid grid-cols-5 pb-2">
                         <dt class="col-span-2 mx-10" style="text-align-last: justify;">挙式</dt>
