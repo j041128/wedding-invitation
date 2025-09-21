@@ -180,7 +180,7 @@ const scrollToNearbyInvitation = () => {
                   <NuxtImg src="/img/jewel2.png" width="112px" height="114" />
                 </div>
               </div>
-              <FadeIn class="min-h-[416px] min-w-[450px]">
+              <FadeIn class="min-h-[416px]">
                 <div>
                   <div class="pb-8">
                     <p class="text-center font-mincho">{{ state.texts.greeting_acronym }}</p>
