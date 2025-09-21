@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme static {
+    --font-mincho: "Shippori Mincho B1", "sans-serif";
+    --font-cursive: "Petit Formal Script", "sans-serif";
+    --font-jost: "Jost", "sans-serif";
+
+    --breakpoint-smartphone: 750px;
+}
