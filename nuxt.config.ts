@@ -45,14 +45,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  routeRules: {
-    '/api/gallery': {
-      ssr: false,
-    },
-    '/api/proxy/**': {
-      ssr: false,
-    }
-  },
   image: {
     cloudinary: {
       baseURL: 'https://res.cloudinary.com/dqfdhrwba/image/upload/v1757439875'

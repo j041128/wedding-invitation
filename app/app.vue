@@ -52,7 +52,6 @@ while(!flag && count < MAX_RETRY){
     });
     state.texts = textsRes;
     if(state.texts.url_top !== undefined){
-      console.log(state.texts.url_top);
       flag = true;
       break;
     }else{
