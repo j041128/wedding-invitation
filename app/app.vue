@@ -230,7 +230,7 @@ const scrollToNearbyInvitation = () => {
             <div>
               <p class="text-center font-cursive italic text-[60px] text-[#FF8F89] tracking-tighter">Information</p>
             </div>
-            <FadeIn class="h-[248px] w-full">
+            <FadeIn class="min-h-[248px] w-full">
               <div class="flex justify-center">
                 <dl class="font-mincho w-[276px]">
                   <div class="grid grid-cols-5 gap-[32px] pb-2">
