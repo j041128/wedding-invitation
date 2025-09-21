@@ -4,12 +4,12 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   app: {
     head: {
-      title: '2026年1月18日結婚式招待状',
+      title: process.env.WEDDING_DATE + '結婚式招待状',
       htmlAttrs: {
         lang: 'ja'
       },
       meta: [
-        { name: 'description', content: '回答は2025年11月30日までにお願いいたします。' },
+        { name: 'description', content: '回答は' + process.env.INVITATION_DUE_DATE + 'までにお願いいたします。' },
         { name: 'robots', content: 'noindex' },
         { name: 'format-detection', content: 'telephone=no,address=no,email=no' }
       ]
@@ -36,6 +36,7 @@ export default defineNuxtConfig({
       googleMaps: {
         mapId: process.env.GOOGLE_MAPS_MAP_ID,
       },
+      ENTRY_TIME: process.env.ENTRY_TIME,
       VERCEL_AUTOMATION_BYPASS_SECRET: process.env.VERCEL_AUTOMATION_BYPASS_SECRET,
       scripts: {
         googleMaps: {

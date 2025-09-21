@@ -16,6 +16,7 @@ const MAX_RETRY = 15;
 
 let flag = false;
 let count = 0;
+let wait = 1000;
 
 // while(!flag && count < MAX_RETRY){
 //   try{
@@ -60,7 +61,8 @@ while(!flag && count < MAX_RETRY){
     }
   }catch(e){
     console.log(e);
-    sleep(1000);
+    sleep(wait);
+    wait = wait * 1000;
   }finally{
     count++;
   }
@@ -104,7 +106,7 @@ const scrollToNearbyInvitation = () => {
                       </div>
                       <div class="grid grid-cols-5 pb-2">
                         <dt class="col-span-2 mx-10" style="text-align-last: justify;">受付</dt>
-                        <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
+                        <dd class="col-span-3">{{ config.public.ENTRY_TIME }}</dd>
                       </div>
                       <div class="grid grid-cols-5 pb-2">
                         <dt class="col-span-2 mx-10" style="text-align-last: justify;">挙式</dt>
@@ -233,7 +235,7 @@ const scrollToNearbyInvitation = () => {
                   </div>
                   <div class="grid grid-cols-5 gap-[32px] pb-2">
                     <dt class="col-span-2 [text-align-last:justify]">受付</dt>
-                    <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
+                    <dd class="col-span-3">{{ config.public.ENTRY_TIME }}</dd>
                   </div>
                   <div class="grid grid-cols-5 gap-[32px] pb-2">
                     <dt class="col-span-2 [text-align-last:justify]">挙式</dt>
