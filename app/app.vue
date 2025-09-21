@@ -18,7 +18,11 @@ let count = 0;
 
 while(!flag && count < MAX_RETRY){
   try{
-    const imagesRes = await $fetch('/api/gallery');
+    const imagesRes = await $fetch('/api/gallery', {
+      headers: {
+        'x-vercel-automation-bypass-secret': config.VERCEL_AUTOMATION_BYPASS_SECRET
+      }
+    });
     state.images = imagesRes
     if(state.images.top !== undefined){
       flag = true;
@@ -40,7 +44,11 @@ count = 0;
 
 while(!flag && count < MAX_RETRY){
   try{
-    const textsRes = await $fetch("/api/text");
+    const textsRes = await $fetch("/api/text", {
+      headers: {
+        'x-vercel-automation-bypass-secret': config.VERCEL_AUTOMATION_BYPASS_SECRET
+      }
+    });
     state.texts = textsRes;
     if(state.texts.url_top !== undefined){
       flag = true;
