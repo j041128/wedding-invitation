@@ -21,15 +21,15 @@
             </div>
         </div>
         <div class="p-4">
-            <div class="my-4">
-                <label class="flex items-end mb-2" for="attendance"><span class="font-mincho text-[24px] mr-2">ご出欠</span><Badge>必須</Badge></label>
-                <div id="attendance">
+            <fieldset class="my-4">
+                <legend class="flex items-end mb-2"><span class="font-mincho text-[24px] mr-2">ご出欠</span><Badge>必須</Badge></legend>
+                <div>
                     <RadioButton :items="attendances" v-model="form.attendance" :id="'attendance1'" :name="'attendance'" />
                 </div>
-            </div>
-            <div class="my-4">
-                <label class="flex items-end mb-2" for="name"><span class="font-mincho text-[24px] mr-2">お名前</span><Badge>必須</Badge></label>
-                <div id="name">
+            </fieldset>
+            <fieldset class="my-4">
+                <legend class="flex items-end mb-2"><span class="font-mincho text-[24px] mr-2">お名前</span><Badge>必須</Badge></legend>
+                <div>
                     <NameInput
                     v-model:first="form.first"
                     v-model:last="form.last"
@@ -37,51 +37,51 @@
                     v-model:lastkana="form.lastkana"
                     />
                 </div>
-                <div class="my-4">
-                    <label class="flex items-end mb-2" for="names"><span class="font-mincho text-[24px]">ご連名</span></label>
-                    <div id="names">
-                        <FullNameInput v-model:name="form.name1" v-model:kana="form.name1kana" id="name1" placeholder="連名1" />
-                        <FullNameInput v-model:name="form.name2" v-model:kana="form.name2kana" id="name2" placeholder="連名2" />
-                        <FullNameInput v-model:name="form.name3" v-model:kana="form.name3kana" id="name3" placeholder="連名3" />
-                        <FullNameInput v-model:name="form.name4" v-model:kana="form.name4kana" id="name4" placeholder="連名4" />
-                    </div> 
+            </fieldset>
+            <fieldset class="my-4">
+                <legend class="flex items-end mb-2"><span class="font-mincho text-[24px]">ご連名</span></legend>
+                <div>
+                    <FullNameInput v-model:name="form.name1" v-model:kana="form.name1kana" id="name1" placeholder="連名1" />
+                    <FullNameInput v-model:name="form.name2" v-model:kana="form.name2kana" id="name2" placeholder="連名2" />
+                    <FullNameInput v-model:name="form.name3" v-model:kana="form.name3kana" id="name3" placeholder="連名3" />
+                    <FullNameInput v-model:name="form.name4" v-model:kana="form.name4kana" id="name4" placeholder="連名4" />
+                </div> 
+            </fieldset>
+            <fieldset class="my-4">
+                <legend class="flex items-end mb-2" for="flag"><span class="font-mincho text-[24px] mr-2">いずれかをお選びください</span><Badge>必須</Badge></legend>
+                <div id="flag">
+                    <RadioButton :items="flags" v-model="form.flag" :id="'flag1'" :name="'flag'" />
                 </div>
-                <div class="my-4">
-                    <label class="flex items-end mb-2" for="flag"><span class="font-mincho text-[24px] mr-2">いずれかをお選びください</span><Badge>必須</Badge></label>
-                    <div id="flag">
-                        <RadioButton :items="flags" v-model="form.flag" :id="'flag1'" :name="'flag'" />
-                    </div>
+            </fieldset>
+            <div class="my-4">
+                <label class="flex items-end mb-2" for="mailaddress"><span class="font-mincho text-[24px]">メールアドレス</span></label>
+                <div class="grid grid-cols-1">
+                    <Input :v-model="form.mailaddress" id="mailaddress" type="email" placeholder="mail@mail.com"/>
                 </div>
-                <div class="my-4">
-                    <label class="flex items-end mb-2" for="mailaddress"><span class="font-mincho text-[24px]">メールアドレス</span></label>
-                    <div id="mailaddress" class="grid grid-cols-1">
-                        <Input :v-model="form.mailaddress" placeholder="mail@mail.com"/>
-                    </div>
+            </div>
+            <fieldset class="my-4">
+                <legend class="flex items-end mb-2" for="address"><span class="font-mincho text-[24px]">ご住所</span></legend>
+                <div class="grid grid-cols-1" id="address">
+                    <AddressInput v-model:zipcode="form.zipcode" v-model:address1="form.city" v-model:address2="form.address2" v-model:address3="form.address3" />
                 </div>
-                <div class="my-4">
-                    <label class="flex items-end mb-2" for="address"><span class="font-mincho text-[24px]">ご住所</span></label>
-                    <div class="grid grid-cols-1" id="address">
-                        <AddressInput v-model:zipcode="form.zipcode" v-model:address1="form.city" v-model:address2="form.address2" v-model:address3="form.address3" />
-                    </div>
+            </fieldset>
+            <div class="my-4">
+                <label class="flex items-end mb-2" for="allergy"><span class="font-mincho text-[24px]">アレルギーについて</span></label>
+                <div>
+                    <p id="allergy-helper-text" class="font-mincho break-keep">アレルギーなど<wbr />食べられないものが<wbr />ございましたら、<wbr />ご遠慮なく<wbr />お書き添えください</p>
+                    <textarea v-model="form.allergy" id="allergy" class="m-1 w-full border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho placeholder:text-left px-4 py-2" cols="2" aria-describedby="allergy-helper-text"></textarea>
                 </div>
-                <div class="my-4">
-                    <label class="flex items-end mb-2" for="allergy"><span class="font-mincho text-[24px]">アレルギーについて</span></label>
-                    <div id="allergy">
-                        <p id="allergy-helper-text" class="font-mincho break-keep">アレルギーなど<wbr />食べられないものが<wbr />ございましたら、<wbr />ご遠慮なく<wbr />お書き添えください</p>
-                        <textarea v-model="form.allergy" class="m-1 w-full border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho placeholder:text-left px-4 py-2" cols="2" aria-describedby="allergy-helper-text"></textarea>
-                    </div>
+            </div>
+            <div class="my-4">
+                <label class="flex items-end mb-2" for="message"><span class="font-mincho text-[24px]">新郎新婦へのメッセージ</span></label>
+                <div>
+                    <textarea v-model="form.message" id="message" class="m-1 w-full border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho placeholder:text-left px-4 py-2" cols="3"></textarea>
                 </div>
-                <div class="my-4">
-                    <label class="flex items-end mb-2" for="message"><span class="font-mincho text-[24px]">新郎新婦へのメッセージ</span></label>
-                    <div id="message">
-                        <textarea v-model="form.message" class="m-1 w-full border-1 border-[#C0E5D4] rounded-[6px] focus:border-3 outline-[#C0E5D4] text-[20px] font-mincho placeholder:text-left px-4 py-2" cols="3"></textarea>
-                    </div>
-                </div>
-                <div class="flex justify-center">
-                    <button class="py-[24px] px-[62px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" :disabled="checkRequired()" @click="handleFormSubmit()">
-                        <span class="font-mincho text-[24px]">招待状に回答する</span>
-                    </button>
-                </div>
+            </div>
+            <div class="flex justify-center">
+                <button class="py-[24px] px-[62px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white" :disabled="checkRequired()" @click="handleFormSubmit()">
+                    <span class="font-mincho text-[24px]">招待状に回答する</span>
+                </button>
             </div>
         </div>
     </div>
