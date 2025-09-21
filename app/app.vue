@@ -12,33 +12,33 @@ const state = reactive({
 
 const config = useRuntimeConfig();
 
-const MAX_RETRY = 10;
+const MAX_RETRY = 15;
 
 let flag = false;
 let count = 0;
 
-while(!flag && count < MAX_RETRY){
-  try{
-    const imagesRes = await $fetch('/api/gallery', {
-      headers: {
-        'x-vercel-automation-bypass-secret': config.VERCEL_AUTOMATION_BYPASS_SECRET
-      }
-    });
-    state.images = imagesRes
-    if(state.images.top !== undefined){
-      flag = true;
-      break;
-    }else{
-      flag = false;
-      throw new Error('画像の取得に失敗しました。');
-    }
-  }catch(e){
-    console.log(e);
-    sleep(1000);
-  }finally{
-    count++;
-  }
-}
+// while(!flag && count < MAX_RETRY){
+//   try{
+//     const imagesRes = await $fetch('/api/gallery', {
+//       headers: {
+//         'x-vercel-automation-bypass-secret': config.VERCEL_AUTOMATION_BYPASS_SECRET
+//       }
+//     });
+//     state.images = imagesRes
+//     if(state.images.top !== undefined){
+//       flag = true;
+//       break;
+//     }else{
+//       flag = false;
+//       throw new Error('画像の取得に失敗しました。');
+//     }
+//   }catch(e){
+//     console.log(e);
+//     sleep(1000);
+//   }finally{
+//     count++;
+//   }
+// }
 
 flag = 0;
 count = 0;
@@ -175,7 +175,7 @@ const scrollToNearbyInvitation = () => {
                 <NuxtImg src="/img/jewel2.png" width="112px" height="114" />
               </div>
             </div>
-            <FadeIn class="h-[416px] w-full">
+            <FadeIn class="min-h-[416px] min-w-[450px]">
               <div>
                 <div class="pb-8">
                   <p class="text-center font-mincho">{{ state.texts.greeting_acronym }}</p>
@@ -259,7 +259,7 @@ const scrollToNearbyInvitation = () => {
               </div>
             </FadeIn>
             <div class="m-4">
-              <BasicMap :position="{ lat: Number(state.texts.information_lat), lng: Number(state.texts.information_lng) }" :zoom="16" :name="state.texts.information_place" />
+              <BasicMap :position="{ lat: Number(state.texts.information_lat), lng: Number(state.texts.information_lng) }" :zoom="14" :name="state.texts.information_place" />
             </div>
             <div>
               <div class="font-mincho text-center text-[20px] py-8">
