@@ -1,6 +1,7 @@
 <script setup>
 import { useRuntimeConfig } from 'nuxt/app';
 import { useTemplateRef } from 'vue'
+import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
