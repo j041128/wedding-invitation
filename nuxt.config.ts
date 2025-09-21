@@ -36,7 +36,7 @@ export default defineNuxtConfig({
       googleMaps: {
         mapId: process.env.GOOGLE_MAPS_MAP_ID,
       },
-      ENTRY_TIME: process.env.ENTRY_TIME,
+      INFORMATION_NOTE: process.env.INFORMATION_NOTE,
       VERCEL_AUTOMATION_BYPASS_SECRET: process.env.VERCEL_AUTOMATION_BYPASS_SECRET,
       scripts: {
         googleMaps: {

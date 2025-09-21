@@ -53,6 +53,7 @@ while(!flag && count < MAX_RETRY){
     });
     state.texts = textsRes;
     if(state.texts.url_top !== undefined){
+      console.log(state.texts.url_top);
       flag = true;
       break;
     }else{
@@ -62,7 +63,7 @@ while(!flag && count < MAX_RETRY){
   }catch(e){
     console.log(e);
     sleep(wait);
-    wait = wait * 1000;
+    wait = wait + 1000;
   }finally{
     count++;
   }
@@ -106,7 +107,10 @@ const scrollToNearbyInvitation = () => {
                       </div>
                       <div class="grid grid-cols-5 pb-2">
                         <dt class="col-span-2 mx-10" style="text-align-last: justify;">受付</dt>
-                        <dd class="col-span-3">{{ config.public.ENTRY_TIME }}</dd>
+                        <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
+                      </div>
+                      <div class="grid grid-cols-5 pb-2" v-if="config.public.INFORMATION_NOTE">
+                        <dt class="col-span-5">{{ config.public.INFORMATION_NOTE }}</dt>
                       </div>
                       <div class="grid grid-cols-5 pb-2">
                         <dt class="col-span-2 mx-10" style="text-align-last: justify;">挙式</dt>
@@ -235,7 +239,10 @@ const scrollToNearbyInvitation = () => {
                   </div>
                   <div class="grid grid-cols-5 gap-[32px] pb-2">
                     <dt class="col-span-2 [text-align-last:justify]">受付</dt>
-                    <dd class="col-span-3">{{ config.public.ENTRY_TIME }}</dd>
+                    <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
+                  </div>
+                  <div class="grid grid-cols-5 pb-2" v-if="config.public.INFORMATION_NOTE">
+                    <dt class="col-span-5">{{ config.public.INFORMATION_NOTE }}</dt>
                   </div>
                   <div class="grid grid-cols-5 gap-[32px] pb-2">
                     <dt class="col-span-2 [text-align-last:justify]">挙式</dt>
