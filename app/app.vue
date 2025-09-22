@@ -21,7 +21,7 @@ while(!flag && count < MAX_RETRY){
   try{
     const textsRes = await $fetch("/api/text", {
       headers: {
-        'x-vercel-automation-bypass-secret': config.VERCEL_AUTOMATION_BYPASS_SECRET
+        'x-vercel-automation-bypass-secret': config.public.VERCEL_AUTOMATION_BYPASS_SECRET
       }
     });
     state.texts = textsRes;

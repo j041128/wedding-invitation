@@ -130,7 +130,7 @@ const handleFormSubmit = async () => {
     try{
         const res = await $fetch(CORS_PROXY + config.public.GOOGLE_FORM_ACTION, {
             headers: {
-                'x-vercel-automation-bypass-secret': config.VERCEL_AUTOMATION_BYPASS_SECRET
+                'x-vercel-automation-bypass-secret': config.public.VERCEL_AUTOMATION_BYPASS_SECRET
             },
             method: 'POST',
             body: {
