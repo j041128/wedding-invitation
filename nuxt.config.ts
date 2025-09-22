@@ -4,12 +4,12 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   app: {
     head: {
-      title: process.env.WEDDING_DATE + '結婚式招待状',
+      title: process.env.WEDDING_DATE ?? '' + '結婚式招待状',
       htmlAttrs: {
         lang: 'ja'
       },
       meta: [
-        { name: 'description', content: '回答は' + process.env.INVITATION_DUE_DATE + 'までにお願いいたします。' },
+        { name: 'description', content: process.env.INVITATION_DUE_DATE ? '回答は' + process.env.INVITATION_DUE_DATE + 'までにお願いいたします。' : '' },
         { name: 'robots', content: 'noindex' },
         { name: 'format-detection', content: 'telephone=no,address=no,email=no' }
       ]
