@@ -17,7 +17,7 @@
                 </template>
             </ImageOnContent>
             <div class="absolute top-[65%] left-[76%]">
-                <img src="/img/jewel1.png" width="116px" height="108px" />
+                <NuxtImg src="/img/jewel1.png" width="116px" height="108px" />
             </div>
         </div>
         <div class="p-4">

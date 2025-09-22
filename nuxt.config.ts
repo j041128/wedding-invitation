@@ -37,7 +37,14 @@ export default defineNuxtConfig({
       },
       INFORMATION_NOTE: process.env.INFORMATION_NOTE,
       VERCEL_AUTOMATION_BYPASS_SECRET: process.env.VERCEL_AUTOMATION_BYPASS_SECRET,
-      BLOB_READ_WRITE_TOKEN: process.env.BLOB_READ_WRITE_TOKEN,
+      CLOUDINARY_BRIDE: process.env.CLOUDINARY_BRIDE,
+      CLOUDINARY_GROOM: process.env.CLOUDINARY_GROOM,
+      CLOUDINARY_THANKS: process.env.CLOUDINARY_THANKS,
+      CLOUDINARY_COUNTDOWN: process.env.CLOUDINARY_COUNTDOWN,
+      CLOUDINARY_PROFILE: process.env.CLOUDINARY_PROFILE,
+      CLOUDINARY_TOP: process.env.CLOUDINARY_TOP,
+      CLOUDINARY_PHOTOS: process.env.CLOUDINARY_PHOTOS,
+      CLOUDINARY_DOT: process.env.CLOUDINARY_DOT,
       scripts: {
         googleMaps: {
           apiKey: process.env.NUXT_PUBLIC_SCRIPTS_GOOGLE_MAPS_API_KEY
