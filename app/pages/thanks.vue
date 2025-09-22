@@ -17,16 +17,16 @@
                     </template>
                 </ImageOnContent>
                 <div class="absolute top-[-1%] rotate-180">
-                    <NuxtImg src="/img/jewel5.png" width="74px" height="76px" />
+                    <img src="/img/jewel5.png" width="74px" height="76px" />
                 </div>
             </div>
             <div class="absolute top-[65%] left-[76%]">
-                <NuxtImg src="/img/jewel1.png" width="116px" height="108px" />
+                <img src="/img/jewel1.png" width="116px" height="108px" />
             </div>
         </div>
         <div>
             <div class="flex justify-center">
-                <NuxtImg loading="lazy" width="212" height="110" :src="props.url_thanks"></NuxtImg>
+                <img loading="lazy" width="212" height="110" :src="props.url_thanks" />
             </div>
             <div class="m-2 leading-8">
                 <p class="font-mincho text-center">送信完了しました。</p>

@@ -77,7 +77,7 @@ const scrollToNearbyInvitation = () => {
                   </div>
                   <div class="grid grid-cols-5 mb-[60px]">
                     <div class="flex justify-center col-span-2 hidden xl:block">
-                      <NuxtImg loading="lazy" width="250px" height="330px" :src="state.images['photos.png']" />
+                      <img loading="lazy" width="250px" height="330px" :src="state.images['photos.png']" />
                     </div>
                     <div class="flex justify-center col-span-5 xl:col-span-3">
                       <dl class="w-[480px] font-mincho text-[min(6vw,20px)] pb-2">
@@ -122,18 +122,18 @@ const scrollToNearbyInvitation = () => {
                   </div>
                 </div>
                 <div class="absolute top-[80%] left-[-5%]">
-                  <NuxtImg src="/img/jewel8.png" width="150px" height="160px" />
+                  <img src="/img/jewel8.png" width="150px" height="160px" />
                 </div>
               </div>
               <div class="absolute top-[90%] left-[75%]">
-                <NuxtImg loading="lazy" width="212" height="110" :src="state.images['dot.png']" />
+                <img loading="lazy" width="212" height="110" :src="state.images['dot.png']" />
               </div>
             </div>
           </div>
           <div class="max-w-[450px] h-[100dvh] col-span-1 overflow-x-auto" ref="smartphone">
             <div class="relative">
               <div class="top grid grid-cols-10">
-                <NuxtImg loading="lazy" class="col-span-9 w-full" width="329" height="409" :src="state.images['top.png']"/>
+                <img loading="lazy" class="col-span-9 w-full" width="329" height="409" :src="state.images['top.png']"/>
                 <div class="col-span-1">
                   <span class="w-[99%] [writing-mode:vertical-rl] font-jost text-[#FCDADA]">
                     <span class="mx-[22px]">
@@ -148,7 +148,7 @@ const scrollToNearbyInvitation = () => {
                 </div>
               </div>
               <div class="absolute top-[90%] left-[74%]">
-                <NuxtImg src="/img/jewel1.png" width="116px" height="108px" />
+                <img src="/img/jewel1.png" width="116px" height="108px" />
               </div>
             </div>
             <div class="greeting py-10">
@@ -158,7 +158,7 @@ const scrollToNearbyInvitation = () => {
                   <p class="text-center text-[#FF89A9] font-cursive text-[64px] ">Invitation</p>
                 </div>
                 <div class="absolute top-[90%] left-[0%]">
-                  <NuxtImg src="/img/jewel2.png" width="112px" height="114" />
+                  <img src="/img/jewel2.png" width="112px" height="114" />
                 </div>
               </div>
               <FadeIn class="min-h-[416px]">
@@ -191,7 +191,7 @@ const scrollToNearbyInvitation = () => {
             <div class="relative">
               <ImageOnContent class="gradation">
                 <template v-slot:image>
-                  <NuxtImg loading="lazy" class="mask-img-top-bottom" :src="state.images['countdown.png']" />
+                  <img loading="lazy" class="mask-img-top-bottom" :src="state.images['countdown.png']" />
                 </template>
                 <template v-slot:content>
                   <div class="grid-rows-3 leading-none">
@@ -203,7 +203,7 @@ const scrollToNearbyInvitation = () => {
                 </template>
               </ImageOnContent>
               <div class="absolute top-[85%] left-[67%]">
-                <NuxtImg src="/img/jewel3.png" width="209px" height="75px" />
+                <img src="/img/jewel3.png" width="209px" height="75px" />
               </div>
             </div>
             <div class="information py-[40px]">
@@ -271,7 +271,7 @@ const scrollToNearbyInvitation = () => {
               <div class="relative">
                 <ImageOnContent>
                   <template v-slot:image>
-                    <NuxtImg loading="lazy" class="image" :src="state.images['profile.png']" />
+                    <img loading="lazy" class="image" :src="state.images['profile.png']" />
                   </template>
                   <template v-slot:content>
                     <div class="flex w-full h-full items-center justify-center">
@@ -280,11 +280,11 @@ const scrollToNearbyInvitation = () => {
                   </template>
                 </ImageOnContent>
                 <div class="absolute top-[-15%]">
-                  <NuxtImg src="/img/jewel9.png" width="108px" height="92px" />
+                  <img src="/img/jewel9.png" width="108px" height="92px" />
                 </div>
               </div>
               <div class="absolute top-[85%] left-[76%]">
-                <NuxtImg src="/img/jewel4.png" width="108px" height="92px" />
+                <img src="/img/jewel4.png" width="108px" height="92px" />
               </div>
             </div>
             <div class="profile py-[39px]">
@@ -292,7 +292,7 @@ const scrollToNearbyInvitation = () => {
                 <FadeIn class="h-[255px] w-full my-4">
                   <div class="grid grid-cols-2">
                     <div class="flex justify-center">
-                      <NuxtImg loading="lazy" width="175px" height="175px" :src="state.images['groom.png']" />
+                      <img loading="lazy" width="175px" height="175px" :src="state.images['groom.png']" />
                     </div>
                     <div class="flex items-center justify-center">
                       <div>
@@ -314,7 +314,7 @@ const scrollToNearbyInvitation = () => {
                       </div>
                     </div>
                     <div class="flex justify-center">
-                      <NuxtImg loading="lazy" width="175px" height="175px" :src="state.images['bride.png']" />
+                      <img loading="lazy" width="175px" height="175px" :src="state.images['bride.png']" />
                     </div>
                   </div>
                   <div class="my-4">
