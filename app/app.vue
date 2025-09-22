@@ -17,31 +17,12 @@ let flag = false;
 let count = 0;
 let wait = 1000;
 
-// while(!flag && count < MAX_RETRY){
-//   try{
-//     const imagesRes = await $fetch('/api/gallery', {
-//       headers: {
-//         'x-vercel-automation-bypass-secret': config.VERCEL_AUTOMATION_BYPASS_SECRET
-//       }
-//     });
-//     state.images = imagesRes
-//     if(state.images.top !== undefined){
-//       flag = true;
-//       break;
-//     }else{
-//       flag = false;
-//       throw new Error('画像の取得に失敗しました。');
-//     }
-//   }catch(e){
-//     console.log(e);
-//     sleep(1000);
-//   }finally{
-//     count++;
-//   }
-// }
-
-flag = 0;
-count = 0;
+const imagesRes = await $fetch("/api/gallery", {
+  headers: {
+    'x-vercel-automation-bypass-secret': config.VERCEL_AUTOMATION_BYPASS_SECRET
+  }
+});
+state.images = imagesRes;
 
 while(!flag && count < MAX_RETRY){
   try{
@@ -96,7 +77,7 @@ const scrollToNearbyInvitation = () => {
                   </div>
                   <div class="grid grid-cols-5 mb-[60px]">
                     <div class="flex justify-center col-span-2 hidden xl:block">
-                      <NuxtImg provider="cloudinary" loading="lazy" width="250px" height="330px" :src="state.texts.url_photos" />
+                      <NuxtImg loading="lazy" width="250px" height="330px" :src="state.images['photos.png']" />
                     </div>
                     <div class="flex justify-center col-span-5 xl:col-span-3">
                       <dl class="w-[480px] font-mincho text-[min(6vw,20px)] pb-2">
@@ -145,14 +126,14 @@ const scrollToNearbyInvitation = () => {
                 </div>
               </div>
               <div class="absolute top-[90%] left-[75%]">
-                <NuxtImg provider="cloudinary" loading="lazy" width="212" height="110" :src="state.texts.url_dot" />
+                <NuxtImg loading="lazy" width="212" height="110" :src="state.images['dot.png']" />
               </div>
             </div>
           </div>
           <div class="max-w-[450px] h-[100dvh] col-span-1 overflow-x-auto" ref="smartphone">
             <div class="relative">
               <div class="top grid grid-cols-10">
-                <NuxtImg provider="cloudinary" loading="lazy" class="col-span-9 w-full" width="329" height="409" :src="state.texts.url_top"/>
+                <NuxtImg loading="lazy" class="col-span-9 w-full" width="329" height="409" :src="state.images['top.png']"/>
                 <div class="col-span-1">
                   <span class="w-[99%] [writing-mode:vertical-rl] font-jost text-[#FCDADA]">
                     <span class="mx-[22px]">
@@ -210,7 +191,7 @@ const scrollToNearbyInvitation = () => {
             <div class="relative">
               <ImageOnContent class="gradation">
                 <template v-slot:image>
-                  <NuxtImg provider="cloudinary" loading="lazy" class="mask-img-top-bottom" :src="state.texts.url_countdown" />
+                  <NuxtImg loading="lazy" class="mask-img-top-bottom" :src="state.images['countdown.png']" />
                 </template>
                 <template v-slot:content>
                   <div class="grid-rows-3 leading-none">
@@ -290,7 +271,7 @@ const scrollToNearbyInvitation = () => {
               <div class="relative">
                 <ImageOnContent>
                   <template v-slot:image>
-                    <NuxtImg provider="cloudinary" loading="lazy" class="image" :src="state.texts.url_profile" />
+                    <NuxtImg loading="lazy" class="image" :src="state.images['profile.png']" />
                   </template>
                   <template v-slot:content>
                     <div class="flex w-full h-full items-center justify-center">
@@ -311,7 +292,7 @@ const scrollToNearbyInvitation = () => {
                 <FadeIn class="h-[255px] w-full my-4">
                   <div class="grid grid-cols-2">
                     <div class="flex justify-center">
-                      <NuxtImg provider="cloudinary" loading="lazy" width="175px" height="175px" :src="state.texts.url_groom" />
+                      <NuxtImg loading="lazy" width="175px" height="175px" :src="state.images['groom.png']" />
                     </div>
                     <div class="flex items-center justify-center">
                       <div>
@@ -333,7 +314,7 @@ const scrollToNearbyInvitation = () => {
                       </div>
                     </div>
                     <div class="flex justify-center">
-                      <NuxtImg provider="cloudinary" loading="lazy" width="175px" height="175px" :src="state.texts.url_bride" />
+                      <NuxtImg loading="lazy" width="175px" height="175px" :src="state.images['bride.png']" />
                     </div>
                   </div>
                   <div class="my-4">
@@ -343,7 +324,7 @@ const scrollToNearbyInvitation = () => {
               </div>
             </div>
             <hr class="text-[#F5DAF6] border-8" ref="horizon">
-            <NuxtPage :url_thanks="state.texts.url_thanks"/>
+            <NuxtPage :url_thanks="state.images['thanks.gif']"/>
             <div class="footer">
               <span class="text-center">©︎ 2025 murase and nakai</span>
             </div>

@@ -10,13 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@kgierke/nuxt-basic-auth": "^1.7.0",
     "@notionhq/client": "^4.0.2",
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/image": "^1.11.0",
     "@nuxt/scripts": "^0.11.13",
     "@tailwindcss/vite": "^4.1.12",
     "@unhead/vue": "^2.0.14",
+    "@vercel/blob": "^2.0.0",
     "@vercel/speed-insights": "^1.2.0",
     "nuxt": "^4.0.3",
     "tailwindcss": "^4.1.12",

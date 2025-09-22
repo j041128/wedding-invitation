@@ -26,7 +26,7 @@
         </div>
         <div>
             <div class="flex justify-center">
-                <NuxtImg provider="cloudinary" width="212" height="110" :src="props.url_thanks"></NuxtImg>
+                <NuxtImg loading="lazy" width="212" height="110" :src="props.url_thanks"></NuxtImg>
             </div>
             <div class="m-2 leading-8">
                 <p class="font-mincho text-center">送信完了しました。</p>

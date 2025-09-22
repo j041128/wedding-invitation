@@ -1,20 +1,16 @@
-import { Client } from "@notionhq/client";
-
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const database_id = process.env.NOTION_DATABASE_ID;
+import { list } from '@vercel/blob';
 
 let payload = {};
 
 async function getImages() {
-  const data = await notion.databases.query({
-    database_id: database_id,
-  });
-  return data;
+  const { blobs } = await list();
+  return blobs;
 }
 
 getImages().then((data) => {
-  data.results.map((v) => {
-    payload[v["properties"]["名前"]["title"][0]["plain_text"]] = v["properties"]["ファイル&メディア"]["files"][0]["file"]["url"];
+
+  data.map((v) => {
+    payload[v["pathname"]] = v["url"];
   });
 });
 

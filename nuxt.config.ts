@@ -19,7 +19,6 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/scripts',
-    '@kgierke/nuxt-basic-auth'
   ],
   compatibilityDate: '2025-07-15',
   css: ['~/assets/css/main.css'],
@@ -38,6 +37,7 @@ export default defineNuxtConfig({
       },
       INFORMATION_NOTE: process.env.INFORMATION_NOTE,
       VERCEL_AUTOMATION_BYPASS_SECRET: process.env.VERCEL_AUTOMATION_BYPASS_SECRET,
+      BLOB_READ_WRITE_TOKEN: process.env.BLOB_READ_WRITE_TOKEN,
       scripts: {
         googleMaps: {
           apiKey: process.env.NUXT_PUBLIC_SCRIPTS_GOOGLE_MAPS_API_KEY
@@ -47,10 +47,7 @@ export default defineNuxtConfig({
   },
   image: {
     cloudinary: {
-      baseURL: 'https://res.cloudinary.com/dqfdhrwba/image/upload/v1757439875'
+      baseURL: process.env.CLOUDINARY_BASEURL
     },
-    domeins: [
-      'https://res.cloudinary.com'
-    ]
   }
 })
