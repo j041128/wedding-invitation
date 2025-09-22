@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   app: {
     head: {
-      title: process.env.WEDDING_DATE ?? '' + '結婚式招待状',
+      title: (process.env.WEDDING_DATE ?? '') + '結婚式招待状',
       htmlAttrs: {
         lang: 'ja'
       },
