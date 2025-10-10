@@ -80,7 +80,8 @@ const scrollToNearbyInvitation = () => {
                         </div>
                         <div class="grid grid-cols-5 pb-2">
                           <dt class="col-span-2 mx-10" style="text-align-last: justify;">受付</dt>
-                          <dd class="col-span-3">{{ state.texts.information_entry }}</dd>
+                          <dd class="col-span-3" v-if="config.public.ENTRY_TIME">{{ config.public.ENTRY_TIME }}</dd>
+                          <dd class="col-span-3" v-else>{{ state.texts.information_entry }}</dd>
                         </div>
                         <div class="grid grid-cols-5 pb-2" v-if="config.public.INFORMATION_NOTE">
                           <dt class="col-span-5 ml-10">{{ config.public.INFORMATION_NOTE }}</dt>
@@ -319,7 +320,7 @@ const scrollToNearbyInvitation = () => {
             <hr class="text-[#F5DAF6] border-8" ref="horizon">
             <NuxtPage :url_thanks="config.public.CLOUDINARY_THANKS"/>
             <div class="footer">
-              <span class="text-center">©︎ 2025 murase and nakai</span>
+              <span class="text-right text-gray-300">©︎ 2025 murase and nakai</span>
             </div>
           </div>
         </div>
