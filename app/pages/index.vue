@@ -127,7 +127,7 @@ const checkRequired = () => {
 const handleFormSubmit = async () => {
 
     try{
-        const res = await $fetch('api/submit', {
+        await $fetch('api/submit', {
             headers: {
                 'x-vercel-automation-bypass-secret': config.public.VERCEL_AUTOMATION_BYPASS_SECRET
             },
@@ -155,10 +155,13 @@ const handleFormSubmit = async () => {
                 'entry.1584758284': form.allergy,
                 'entry.892809074': form.message,
             },
+        }).then((res) => {
+            router.push('/thanks');
+        }).catch((err) => {
+            console.log(err);
         });
-        router.push('/thanks');
     }catch(e){
         console.log(e);
-    }
+    };
 }
 </script>

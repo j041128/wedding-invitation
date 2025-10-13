@@ -1,8 +1,10 @@
 import { Client } from '@notionhq/client';
 
 const notion = new Client({ auth: process.env.NOTION_SUBMIT_API_KEY });
+const session_id = Math.random()
 
 async function createGuest(value) {
+    console.log("Notion連携を開始します（session_id:" + session_id + "）");
     const response = await notion.pages.create({
         parent: {
             type: "data_source_id",
@@ -188,21 +190,23 @@ async function createGuest(value) {
                 ]
             },
         },
+    }).catch((error) => {
+        throw error;
     });
+    console.log("Notion連携が完了しました（session_id:" + session_id + "）");
     return response;
 }
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event);
+    let status = 204;
 
-    console.log(body);
-
-    createGuest(body).then((res) => {
-        console.log(res);
-        setResponseStatus(event, res.status);
+    await createGuest(body).then((res) => {
+        status = 204;
     })
-    .catch((error) => {
-        console.log(error);
-        setResponseStatus(event, 500);
+    .catch((err) => {
+        console.log("エラーが発生しました（session_id:" + session_id + "）");
+        status = 500
     });
+    setResponseStatus(event, status);
 });
