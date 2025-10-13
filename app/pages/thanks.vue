@@ -28,13 +28,15 @@
             <div class="flex justify-center">
                 <NuxtImg provider="cloudinary" loading="lazy" width="212" height="110" :src="props.url_thanks" />
             </div>
-            <div class="m-2 leading-8">
-                <p class="font-mincho text-center [&_span]:inline-block"><span class="d">送信完了</span><span>しました</span></p>
-                <p class="font-mincho text-center [&_span]:inline-block"><span>ご回答</span><span>ありがとう</span><span>ございました</span></p>
-            </div>
-            <div class="m-2 leading-8">
-                <p class="font-mincho text-center [&_span]:inline-block"><span>ご出席と</span><span>お答え</span><span>いただいた方へは</span></p>
-                <p class="font-mincho text-center [&_span]:inline-block"><span>挙式が</span><span>近づきましたら</span><span>改めて</span><span>ご案内を</span><span>お送りいたします</span></p>
+            <div class="mx-2">
+                <div class="my-2 leading-8">
+                    <p class="font-mincho text-center [&_span]:inline-block"><span class="d">送信完了</span><span>しました</span></p>
+                    <p class="font-mincho text-center [&_span]:inline-block"><span>ご回答</span><span>ありがとう</span><span>ございました</span></p>
+                </div>
+                <div class="my-2 leading-8">
+                    <p class="font-mincho text-center [&_span]:inline-block"><span>ご出席と</span><span>お答え</span><span>いただいた方へは</span></p>
+                    <p class="font-mincho text-center [&_span]:inline-block"><span>挙式が</span><span>近づきましたら</span><span>改めて</span><span>ご案内を</span><span>お送りいたします</span></p>
+                </div>
             </div>
         </div>
     </div>
@@ -46,17 +48,20 @@ const props = defineProps({
         type: String,
         default: "",
     },
+    smartphone: {
+        type: Object,
+        default: null,
+    }
 });
 
-const smartphone = useTemplateRef('smartphone');
 const thanks = useTemplateRef('thanks');
 
 const scrollToNearbyThanks = () => {
   var rect = thanks.value.getBoundingClientRect();
   var position = rect.top;
 
-  if (typeof(smartphone.value) == Object && position !== null){
-    smartphone.value.scrollBy({
+  if (typeof(props.smartphone.value) == Object && position !== null){
+    props.smartphone.value.scrollBy({
         top: position,
     });
   }
