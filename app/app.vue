@@ -30,7 +30,7 @@ while(!flag && count < MAX_RETRY){
       break;
     }else{
       flag = false;
-      throw new Error('テキストの取得に失敗しました。');
+      throw new Error('テキストの取得に失敗しました');
     }
   }catch(e){
     console.log(e);
