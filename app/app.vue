@@ -321,7 +321,9 @@ const scrollToNearbyInvitation = () => {
             <hr class="text-[#F5DAF6] border-8" ref="horizon">
             <NuxtPage :url_thanks="config.public.CLOUDINARY_THANKS"/>
             <div class="footer">
-              <span class="text-right text-gray-300">©︎ 2025 murase and nakai</span>
+              <div class="flex justify-end">
+                <span class="text-gray-300">©︎ 2025 murase and nakai</span>
+              </div>
             </div>
           </div>
         </div>

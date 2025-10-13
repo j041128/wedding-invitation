@@ -29,12 +29,12 @@
                 <NuxtImg provider="cloudinary" loading="lazy" width="212" height="110" :src="props.url_thanks" />
             </div>
             <div class="m-2 leading-8">
-                <p class="font-mincho text-center">送信完了しました</p>
-                <p class="font-mincho text-center">ご回答ありがとうございました</p>
+                <p class="font-mincho text-center [&_span]:inline-block"><span class="d">送信完了</span><span>しました</span></p>
+                <p class="font-mincho text-center [&_span]:inline-block"><span>ご回答</span><span>ありがとう</span><span>ございました</span></p>
             </div>
             <div class="m-2 leading-8">
-                <p class="font-mincho text-center">ご出席とお答えいただいた方へは、</p>
-                <p class="font-mincho text-center">挙式が近づきましたら改めてご案内をお送りいたします</p>
+                <p class="font-mincho text-center [&_span]:inline-block"><span>ご出席と</span><span>お答え</span><span>いただいた方へは</span></p>
+                <p class="font-mincho text-center [&_span]:inline-block"><span>挙式が</span><span>近づきましたら</span><span>改めて</span><span>ご案内を</span><span>お送りいたします</span></p>
             </div>
         </div>
     </div>
