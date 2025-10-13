@@ -56,7 +56,7 @@
             <div class="my-4">
                 <label class="flex items-end mb-2" for="mailaddress"><span class="font-mincho text-[24px]">メールアドレス</span></label>
                 <div class="grid grid-cols-1">
-                    <Input :v-model="form.mailaddress" id="mailaddress" type="email" placeholder="mail@mail.com"/>
+                    <Input v-model="form.mailaddress" id="mailaddress" type="email" placeholder="mail@mail.com"/>
                 </div>
             </div>
             <fieldset class="my-4">
@@ -125,10 +125,9 @@ const checkRequired = () => {
 }
 
 const handleFormSubmit = async () => {
-    const CORS_PROXY = "/api/proxy/";
 
     try{
-        const res = await $fetch(CORS_PROXY + config.public.GOOGLE_FORM_ACTION, {
+        const res = await $fetch('api/submit', {
             headers: {
                 'x-vercel-automation-bypass-secret': config.public.VERCEL_AUTOMATION_BYPASS_SECRET
             },
