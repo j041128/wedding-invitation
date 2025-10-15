@@ -1,5 +1,5 @@
 <template>
-    <div class="thanks pb-45" ref="thanks">
+    <div class="thanks pb-10" ref="thanks">
         <div class="relative">
             <div class="relative">
                 <ImageOnContent>
@@ -37,12 +37,31 @@
                     <p class="font-mincho text-center [&_span]:inline-block"><span>ご出席と</span><span>お答え</span><span>いただいた方へは</span></p>
                     <p class="font-mincho text-center [&_span]:inline-block"><span>挙式が</span><span>近づきましたら</span><span>改めて</span><span>ご案内を</span><span>お送りいたします</span></p>
                 </div>
+                <div class="my-2 flex justify-center">
+                    <a 
+                        :href="config.GOOGLE_CALENDAR_HREF"
+                        target="_blank"
+                        class="py-[20px] px-[62px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white">
+                        <span class="font-mincho text-[14px]">Googleカレンダーに予定を追加する</span>
+                    </a>
+                </div>
+                <div class="my-2 flex justify-center">
+                    <a 
+                        :href="config.ICAL_HREF"
+                        class="py-[20px] px-[50px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white">
+                        <span class="font-mincho text-[14px]">それ以外のカレンダーに予定を追加する</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
+import { useRuntimeConfig } from 'nuxt/app';
+
+const config = useRuntimeConfig();
+
 const props = defineProps({
     url_thanks: {
         type: String,

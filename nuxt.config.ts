@@ -46,6 +46,8 @@ export default defineNuxtConfig({
       CLOUDINARY_TOP: process.env.CLOUDINARY_TOP,
       CLOUDINARY_PHOTOS: process.env.CLOUDINARY_PHOTOS,
       CLOUDINARY_DOT: process.env.CLOUDINARY_DOT,
+      GOOGLE_CALENDAR_HREF: process.env.GOOGLE_CALENDAR_HREF,
+      ICAL_HREF: process.env.ICAL_HREF,
       scripts: {
         googleMaps: {
           apiKey: process.env.NUXT_PUBLIC_SCRIPTS_GOOGLE_MAPS_API_KEY
