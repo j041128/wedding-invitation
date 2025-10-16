@@ -39,7 +39,7 @@
                 </div>
                 <div class="my-2 flex justify-center">
                     <a 
-                        :href="config.GOOGLE_CALENDAR_HREF"
+                        :href="config.public.GOOGLE_CALENDAR_HREF"
                         target="_blank"
                         class="py-[20px] px-[62px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white">
                         <span class="font-mincho text-[14px]">Googleカレンダーに予定を追加する</span>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="my-2 flex justify-center">
                     <a 
-                        :href="config.ICAL_HREF"
+                        :href="config.public.ICAL_HREF"
                         class="py-[20px] px-[50px] rounded-full shadow-md bg-[#D7F0E5] disabled:bg-[#D9D9D9] disabled:text-white">
                         <span class="font-mincho text-[14px]">それ以外のカレンダーに予定を追加する</span>
                     </a>
